@@ -382,6 +382,49 @@ const Index = () => {
               </CardContent>
             </Card>
           </div>
+
+          <div className="mt-12">
+            <h3 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
+              Наказания
+            </h3>
+            <div className="grid gap-6">
+              <Card className="bg-gradient-to-br from-red-950/20 to-orange-950/20 border-2 border-red-500/40 hover:border-red-500/70 transition-all">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-br from-red-600 to-orange-600 p-3 rounded-xl flex-shrink-0">
+                      <Icon name="AlertTriangle" size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-bold mb-2 text-red-400">
+                        За воровство
+                      </h4>
+                      <p className="text-lg text-muted-foreground">
+                        Вас забанят на <span className="text-red-400 font-bold">1 месяц</span>
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-br from-red-950/20 to-orange-950/20 border-2 border-orange-500/40 hover:border-orange-500/70 transition-all">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-br from-orange-600 to-red-600 p-3 rounded-xl flex-shrink-0">
+                      <Icon name="Ban" size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-bold mb-2 text-orange-400">
+                        За оскорбления
+                      </h4>
+                      <p className="text-lg text-muted-foreground">
+                        Вас забанят на <span className="text-orange-400 font-bold">5 месяцев</span>
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </section>
 
