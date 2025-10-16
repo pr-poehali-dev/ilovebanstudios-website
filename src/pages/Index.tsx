@@ -99,6 +99,18 @@ const Index = () => {
               </a>
             </Button>
           </div>
+          <div className="mt-6 animate-fade-in">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 hover:scale-105 transition-transform text-white font-bold px-8 shadow-lg shadow-yellow-500/50"
+              asChild
+            >
+              <a href="https://www.roblox.com/games/84006683269809/Steal-a-brainrot" target="_blank" rel="noopener noreferrer">
+                <Icon name="Trophy" size={20} className="mr-2" />
+                Самая лучшая игра за историю
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
