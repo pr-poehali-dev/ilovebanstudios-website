@@ -14,6 +14,7 @@ const Index = () => {
             <div className="flex gap-6 items-center">
               <a href="#about" className="hover:text-primary transition-colors">О группе</a>
               <a href="#projects" className="hover:text-primary transition-colors">Проекты</a>
+              <a href="#news" className="hover:text-primary transition-colors">Новости</a>
               <a href="#support" className="hover:text-primary transition-colors">Поддержка</a>
             </div>
           </div>
@@ -116,6 +117,56 @@ const Index = () => {
                   </a>
                 </Button>
               </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="news" className="py-20 px-6">
+        <div className="container mx-auto">
+          <h2 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Последние новости
+          </h2>
+          <div className="max-w-3xl mx-auto">
+            <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/50 hover:border-primary transition-all overflow-hidden">
+              <div className="relative bg-gradient-to-r from-primary via-accent to-primary p-1">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary opacity-50 blur-xl"></div>
+                <div className="relative bg-card p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="bg-gradient-to-br from-primary to-accent p-3 rounded-xl">
+                      <Icon name="Zap" size={32} className="text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold border border-primary/30">
+                          Событие
+                        </span>
+                        <span className="text-muted-foreground text-sm flex items-center gap-1">
+                          <Icon name="Clock" size={16} />
+                          Завтра в 22:00 МСК
+                        </span>
+                      </div>
+                      <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Админ абьюз
+                      </h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        Не пропустите эпичное событие! Админы покажут свою мощь и устроят незабываемое шоу. 
+                        Приходите завтра в 22:00 по московскому времени и станьте свидетелем админ абьюза!
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4 pt-4 border-t border-border">
+                    <div className="flex items-center gap-2 text-primary">
+                      <Icon name="Calendar" size={20} />
+                      <span className="font-semibold">18 октября 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-accent">
+                      <Icon name="Users" size={20} />
+                      <span className="font-semibold">Для всех игроков</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Card>
           </div>
         </div>
