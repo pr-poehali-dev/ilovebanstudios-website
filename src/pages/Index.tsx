@@ -80,8 +80,15 @@ const Index = () => {
           </h2>
           <div className="max-w-2xl mx-auto">
             <Card className="bg-gradient-to-br from-card to-muted border-2 border-accent/30 hover:border-accent transition-all hover-scale overflow-hidden">
-              <div className="relative h-64 bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                <Icon name="Play" size={80} className="text-accent" />
+              <div className="relative h-64 bg-gradient-to-br from-accent/20 to-primary/20 overflow-hidden">
+                <img 
+                  src="https://cdn.poehali.dev/files/7433d5c4-025b-41aa-bc64-a9d35173c38b.png" 
+                  alt="ilovebanstudios screenshot"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                  <Icon name="Play" size={80} className="text-white drop-shadow-lg" />
+                </div>
               </div>
               <CardContent className="p-8">
                 <h3 className="text-3xl font-bold mb-4 flex items-center gap-3">
