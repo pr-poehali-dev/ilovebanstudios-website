@@ -300,9 +300,12 @@ const Index = () => {
               <Button 
                 size="lg"
                 className="bg-gradient-to-r from-secondary to-accent hover:scale-105 transition-transform text-background font-semibold px-8"
+                asChild
               >
-                <Icon name="Send" size={20} className="mr-2" />
-                @SupportsGladmin
+                <a href="https://support.google.com/" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Send" size={20} className="mr-2" />
+                  @SupportsGladmin
+                </a>
               </Button>
             </CardContent>
           </Card>
