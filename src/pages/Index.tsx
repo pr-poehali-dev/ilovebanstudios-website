@@ -1,8 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const eventDate = new Date('2025-10-18T22:00:00+03:00');
+    
+    const timer = setInterval(() => {
+      const now = new Date();
+      const difference = eventDate.getTime() - now.getTime();
+      
+      if (difference > 0) {
+        const hours = Math.floor(difference / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        setTimeLeft({ hours, minutes, seconds });
+      } else {
+        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+      }
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background">
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border">
@@ -149,10 +172,35 @@ const Index = () => {
                       <h3 className="text-3xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                         Админ абьюз
                       </h3>
-                      <p className="text-lg text-muted-foreground leading-relaxed">
+                      <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                         Не пропустите эпичное событие! Админы покажут свою мощь и устроят незабываемое шоу. 
                         Приходите завтра в 22:00 по московскому времени и станьте свидетелем админ абьюза!
                       </p>
+                      <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl p-6 border border-primary/30">
+                        <div className="text-center mb-3">
+                          <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">До начала события</span>
+                        </div>
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="bg-card/50 backdrop-blur rounded-lg p-4 border border-primary/20">
+                            <div className="text-4xl font-black bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent mb-1">
+                              {String(timeLeft.hours).padStart(2, '0')}
+                            </div>
+                            <div className="text-xs text-muted-foreground uppercase">Часов</div>
+                          </div>
+                          <div className="bg-card/50 backdrop-blur rounded-lg p-4 border border-accent/20">
+                            <div className="text-4xl font-black bg-gradient-to-br from-accent to-secondary bg-clip-text text-transparent mb-1">
+                              {String(timeLeft.minutes).padStart(2, '0')}
+                            </div>
+                            <div className="text-xs text-muted-foreground uppercase">Минут</div>
+                          </div>
+                          <div className="bg-card/50 backdrop-blur rounded-lg p-4 border border-secondary/20">
+                            <div className="text-4xl font-black bg-gradient-to-br from-secondary to-primary bg-clip-text text-transparent mb-1">
+                              {String(timeLeft.seconds).padStart(2, '0')}
+                            </div>
+                            <div className="text-xs text-muted-foreground uppercase">Секунд</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-4 pt-4 border-t border-border">
