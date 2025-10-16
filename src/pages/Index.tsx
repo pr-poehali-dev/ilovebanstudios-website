@@ -31,24 +31,7 @@ const Index = () => {
   };
 
   useEffect(() => {
-    const eventDate = new Date('2025-10-18T22:00:00+03:00');
-    
-    const timer = setInterval(() => {
-      const now = new Date();
-      const difference = eventDate.getTime() - now.getTime();
-      
-      if (difference > 0) {
-        const hours = Math.floor(difference / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        
-        setTimeLeft({ hours, minutes, seconds });
-      } else {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
-      }
-    }, 1000);
-    
-    return () => clearInterval(timer);
+    setTimeLeft({ hours: 24, minutes: 10, seconds: 0 });
   }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background">
