@@ -95,9 +95,12 @@ const Index = () => {
                 <Button 
                   className="w-full bg-gradient-to-r from-accent to-primary hover:scale-105 transition-transform text-white font-semibold"
                   size="lg"
+                  asChild
                 >
-                  <Icon name="ExternalLink" size={20} className="mr-2" />
-                  Играть сейчас
+                  <a href="https://www.roblox.com/games/84006683269809/Steal-a-brainrot" target="_blank" rel="noopener noreferrer">
+                    <Icon name="ExternalLink" size={20} className="mr-2" />
+                    Играть сейчас
+                  </a>
                 </Button>
               </CardContent>
             </Card>
