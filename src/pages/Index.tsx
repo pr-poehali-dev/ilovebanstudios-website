@@ -28,21 +28,27 @@ const Index = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
             Gaming Group
           </p>
-          <div className="flex gap-4 justify-center animate-fade-in">
+          <div className="flex gap-4 justify-center animate-fade-in flex-wrap">
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-primary to-accent hover:scale-105 transition-transform text-white font-semibold px-8"
+              asChild
             >
-              <Icon name="Users" size={20} className="mr-2" />
-              Присоединиться
+              <a href="https://www.roblox.com/users/8656342223/profile" target="_blank" rel="noopener noreferrer">
+                <Icon name="User" size={20} className="mr-2" />
+                Аккаунт в Roblox
+              </a>
             </Button>
             <Button 
               size="lg" 
               variant="outline"
               className="border-2 border-secondary text-secondary hover:bg-secondary hover:text-background transition-all"
+              asChild
             >
-              <Icon name="Gamepad2" size={20} className="mr-2" />
-              Наши игры
+              <a href="https://www.roblox.com/games/84006683269809/Steal-a-brainrot" target="_blank" rel="noopener noreferrer">
+                <Icon name="Gamepad2" size={20} className="mr-2" />
+                Наши игры
+              </a>
             </Button>
           </div>
         </div>
