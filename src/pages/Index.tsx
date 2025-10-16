@@ -16,7 +16,7 @@ const Index = () => {
     },
     {
       title: "РП Чехов",
-      description: "Погрузитесь в атмосферу ролевой игры в городе Чехов! Создавайте свою историю, общайтесь с игроками и стройте свою карьеру в виртуальном мире.",
+      description: "Чехов roleplay! Играй с друзьями! Но запомни тут много оружий в магазине есть!",
       image: "https://cdn.poehali.dev/files/7433d5c4-025b-41aa-bc64-a9d35173c38b.png",
       url: "https://www.roblox.com/games/88555117318628/ROLEPLAY-Release"
     }
@@ -152,16 +152,28 @@ const Index = () => {
                 <p className="text-muted-foreground text-lg mb-6">
                   {projects[currentProject].description}
                 </p>
-                <Button 
-                  className="w-full bg-gradient-to-r from-accent to-primary hover:scale-105 transition-transform text-white font-semibold"
-                  size="lg"
-                  asChild
-                >
-                  <a href={projects[currentProject].url} target="_blank" rel="noopener noreferrer">
-                    <Icon name="ExternalLink" size={20} className="mr-2" />
-                    Играть сейчас
-                  </a>
-                </Button>
+                <div className="flex gap-3">
+                  <Button 
+                    className="flex-1 bg-gradient-to-r from-accent to-primary hover:scale-105 transition-transform text-white font-semibold"
+                    size="lg"
+                    asChild
+                  >
+                    <a href={projects[currentProject].url} target="_blank" rel="noopener noreferrer">
+                      <Icon name="ExternalLink" size={20} className="mr-2" />
+                      Играть сейчас
+                    </a>
+                  </Button>
+                  <Button 
+                    className="flex-1 bg-gradient-to-r from-secondary to-accent hover:scale-105 transition-transform text-background font-semibold"
+                    size="lg"
+                    asChild
+                  >
+                    <a href="#support">
+                      <Icon name="MessageSquare" size={20} className="mr-2" />
+                      Пишите нам
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
             
