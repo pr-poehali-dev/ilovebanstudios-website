@@ -280,7 +280,7 @@ const Index = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 pt-4 border-t border-border">
+                  <div className="flex items-center gap-4 pt-4 border-t border-border mb-6">
                     <div className="flex items-center gap-2 text-primary">
                       <Icon name="Calendar" size={20} />
                       <span className="font-semibold">18 октября 2025</span>
@@ -290,6 +290,16 @@ const Index = () => {
                       <span className="font-semibold">Для всех игроков</span>
                     </div>
                   </div>
+                  <Button 
+                    className="w-full bg-gradient-to-r from-primary via-accent to-primary hover:scale-105 transition-transform text-white font-bold shadow-lg shadow-primary/50 animate-pulse"
+                    size="lg"
+                    asChild
+                  >
+                    <a href="https://landofgames.ru/articles/guides/28468-admin-abjuz-v-steal-a-brainrot-kogda-prohodit.html" target="_blank" rel="noopener noreferrer">
+                      <Icon name="Zap" size={20} className="mr-2" />
+                      Не хочешь пропустить админ абьюз? Нажимай!
+                    </a>
+                  </Button>
                 </div>
               </div>
             </Card>
