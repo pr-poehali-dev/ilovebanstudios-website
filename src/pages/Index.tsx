@@ -164,27 +164,41 @@ const Index = () => {
                 <p className="text-muted-foreground text-lg mb-6">
                   {projects[currentProject].description}
                 </p>
-                <div className="flex gap-3">
-                  <Button 
-                    className="flex-1 bg-gradient-to-r from-accent to-primary hover:scale-105 transition-transform text-white font-semibold"
-                    size="lg"
-                    asChild
-                  >
-                    <a href={projects[currentProject].url} target="_blank" rel="noopener noreferrer">
-                      <Icon name="ExternalLink" size={20} className="mr-2" />
-                      Играть сейчас
-                    </a>
-                  </Button>
-                  <Button 
-                    className="flex-1 bg-gradient-to-r from-secondary to-accent hover:scale-105 transition-transform text-background font-semibold"
-                    size="lg"
-                    asChild
-                  >
-                    <a href="#support">
-                      <Icon name="MessageSquare" size={20} className="mr-2" />
-                      Пишите нам
-                    </a>
-                  </Button>
+                <div className="space-y-3">
+                  <div className="flex gap-3">
+                    <Button 
+                      className="flex-1 bg-gradient-to-r from-accent to-primary hover:scale-105 transition-transform text-white font-semibold"
+                      size="lg"
+                      asChild
+                    >
+                      <a href={projects[currentProject].url} target="_blank" rel="noopener noreferrer">
+                        <Icon name="ExternalLink" size={20} className="mr-2" />
+                        Играть сейчас
+                      </a>
+                    </Button>
+                    <Button 
+                      className="flex-1 bg-gradient-to-r from-secondary to-accent hover:scale-105 transition-transform text-background font-semibold"
+                      size="lg"
+                      asChild
+                    >
+                      <a href="#support">
+                        <Icon name="MessageSquare" size={20} className="mr-2" />
+                        Пишите нам
+                      </a>
+                    </Button>
+                  </div>
+                  {projects[currentProject].title === "Steal a brainrot" && (
+                    <Button 
+                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:scale-105 transition-transform text-white font-bold shadow-lg shadow-purple-500/50"
+                      size="lg"
+                      asChild
+                    >
+                      <a href="https://www.roblox.com/share?code=aa77e00c17fed845a2948cf1c1e3f687&type=Server" target="_blank" rel="noopener noreferrer">
+                        <Icon name="Lock" size={20} className="mr-2" />
+                        Зайти на приват разработчика
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
