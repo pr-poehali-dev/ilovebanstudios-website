@@ -5,6 +5,30 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [currentProject, setCurrentProject] = useState(0);
+
+  const projects = [
+    {
+      title: "Steal a brainrot",
+      description: "Захватывающая игра, в которой вам предстоит погрузиться в безумный мир приключений. Соревнуйтесь с друзьями и покажите, кто настоящий мастер!",
+      image: "https://cdn.poehali.dev/files/7433d5c4-025b-41aa-bc64-a9d35173c38b.png",
+      url: "https://www.roblox.com/games/84006683269809/Steal-a-brainrot"
+    },
+    {
+      title: "РП Чехов",
+      description: "Погрузитесь в атмосферу ролевой игры в городе Чехов! Создавайте свою историю, общайтесь с игроками и стройте свою карьеру в виртуальном мире.",
+      image: "https://cdn.poehali.dev/files/7433d5c4-025b-41aa-bc64-a9d35173c38b.png",
+      url: "https://www.roblox.com/games/88555117318628/ROLEPLAY-Release"
+    }
+  ];
+
+  const nextProject = () => {
+    setCurrentProject((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevProject = () => {
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+  };
 
   useEffect(() => {
     const eventDate = new Date('2025-10-18T22:00:00+03:00');
@@ -108,13 +132,13 @@ const Index = () => {
           <h2 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
             Проекты в Roblox
           </h2>
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto relative">
             <Card className="bg-gradient-to-br from-card to-muted border-2 border-accent/30 hover:border-accent transition-all hover-scale overflow-hidden">
               <div className="relative h-64 bg-gradient-to-br from-accent/20 to-primary/20 overflow-hidden">
                 <img 
-                  src="https://cdn.poehali.dev/files/7433d5c4-025b-41aa-bc64-a9d35173c38b.png" 
-                  alt="ilovebanstudios screenshot"
-                  className="w-full h-full object-cover"
+                  src={projects[currentProject].image}
+                  alt={projects[currentProject].title}
+                  className="w-full h-full object-cover transition-opacity duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
                   <Icon name="Play" size={80} className="text-white drop-shadow-lg" />
@@ -123,24 +147,53 @@ const Index = () => {
               <CardContent className="p-8">
                 <h3 className="text-3xl font-bold mb-4 flex items-center gap-3">
                   <Icon name="Gamepad2" size={32} className="text-primary" />
-                  Steal a brainrot
+                  {projects[currentProject].title}
                 </h3>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Захватывающая игра, в которой вам предстоит погрузиться в безумный мир приключений. 
-                  Соревнуйтесь с друзьями и покажите, кто настоящий мастер!
+                  {projects[currentProject].description}
                 </p>
                 <Button 
                   className="w-full bg-gradient-to-r from-accent to-primary hover:scale-105 transition-transform text-white font-semibold"
                   size="lg"
                   asChild
                 >
-                  <a href="https://www.roblox.com/games/84006683269809/Steal-a-brainrot" target="_blank" rel="noopener noreferrer">
+                  <a href={projects[currentProject].url} target="_blank" rel="noopener noreferrer">
                     <Icon name="ExternalLink" size={20} className="mr-2" />
                     Играть сейчас
                   </a>
                 </Button>
               </CardContent>
             </Card>
+            
+            <Button
+              onClick={prevProject}
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gradient-to-r from-primary to-accent hover:scale-110 transition-transform text-white shadow-lg"
+            >
+              <Icon name="ChevronLeft" size={24} />
+            </Button>
+            
+            <Button
+              onClick={nextProject}
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gradient-to-r from-accent to-primary hover:scale-110 transition-transform text-white shadow-lg"
+            >
+              <Icon name="ChevronRight" size={24} />
+            </Button>
+            
+            <div className="flex justify-center gap-2 mt-6">
+              {projects.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentProject(index)}
+                  className={`h-2 rounded-full transition-all ${
+                    index === currentProject 
+                      ? 'w-8 bg-gradient-to-r from-primary to-accent' 
+                      : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
