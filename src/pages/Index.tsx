@@ -31,7 +31,7 @@ const Index = () => {
   };
 
   useEffect(() => {
-    setTimeLeft({ hours: 24, minutes: 10, seconds: 0 });
+    setTimeLeft({ hours: 12, minutes: 1, seconds: 10 });
   }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background">
